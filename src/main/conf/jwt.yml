@@ -1,15 +1,17 @@
 credentials:
-    client_id: martin
-    client_secret: martin
+  client_id: martin
+  client_secret: martin
 grant_types:
-- authorization_code
-- refresh_token
-- implicit
-- password
+  - authorization_code
+  - refresh_token
+  - implicit
+  - password
 scopes:
-- read
-- write
-- trust
+  - read
+  - write
+  - trust
+authorities:
+  - ROLE_CLIENT
 signing_key: as466gf
 verify_key: as466gf
 access_token_validity: 3600

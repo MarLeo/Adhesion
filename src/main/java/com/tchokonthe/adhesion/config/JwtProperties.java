@@ -22,6 +22,8 @@ public class JwtProperties {
 
     public List<String> grant_types = newArrayList();
 
+    public List<String> authorities = newArrayList();
+
     public String access_token_validity;
 
     public String refresh_token_validity;

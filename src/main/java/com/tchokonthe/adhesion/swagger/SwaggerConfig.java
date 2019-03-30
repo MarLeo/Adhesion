@@ -1,4 +1,3 @@
-/*
 package com.tchokonthe.adhesion.swagger;
 
 
@@ -37,10 +36,32 @@ public class SwaggerConfig {
         return new Docket(SWAGGER_2)
                 .groupName("v1.0/users/api/docs")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.tchokonthe.adhesion"))
+                .apis(RequestHandlerSelectors.basePackage("com.tchokonthe.adhesion.controller"))
                 .paths(regex("/api/users/v1.0.*"))
                 .build()
                 .apiInfo(apiInfo("1.0"));
     }
+
+    @Bean
+    public Docket authoritiesV1() {
+        return new Docket(SWAGGER_2)
+                .groupName("v1.0/authorities/api/docs")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.tchokonthe.adhesion.controller"))
+                .paths(regex("/api/authorities/v1.0.*"))
+                .build()
+                .apiInfo(apiInfo("1.0"));
+    }
+
+    @Bean
+    public Docket authV1() {
+        return new Docket(SWAGGER_2)
+                .groupName("v1.0/auth/api/docs")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.tchokonthe.adhesion.controller"))
+                .paths(regex("/api/auth/v1.0.*"))
+                .build()
+                .apiInfo(apiInfo("1.0"));
+    }
+
 }
-*/

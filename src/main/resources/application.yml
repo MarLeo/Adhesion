@@ -12,8 +12,8 @@ spring:
       max-active: 50
       max-idle: 20
       min-idle: 15
-#    schema: classpath:schema.sql
-#    data: classpath:import.sql
+    schema: classpath:schema.sql
+    data: classpath:import.sql
     platform: mysql
   jpa:
     show-sql: true
@@ -28,3 +28,7 @@ spring:
 ##  cache:
 ##    type: hazelcast
 ##    cache-names: usersCache
+security:
+  oauth2:
+    resource:
+      filter-order: 3

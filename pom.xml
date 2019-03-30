@@ -13,36 +13,7 @@
     <version>develop-SNAPSHOT</version>
     <name>adhesion</name>
     <description>Adhesion Application</description>
-
-    <url>https://github.com/kevinsawicki/github-maven-example</url>
-
-    <issueManagement>
-        <url>https://github.com/kevinsawicki/github-maven-example/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <scm>
-        <url>https://github.com/kevinsawicki/github-maven-example</url>
-        <connection>scm:git:git://github.com/kevinsawicki/github-maven-example.git</connection>
-        <developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection>
-    </scm>
-
-    <developers>
-        <developer>
-            <email>martin.aurele12@gmail.com</email>
-            <name>Martin</name>
-            <url>https://github.com/MarLeo</url>
-            <id>kevinsawicki</id>
-        </developer>
-    </developers>
+    <url>https://github.com/MarLeo/Adhesion</url>
 
     <properties>
         <java.version>1.11</java.version>
@@ -76,31 +47,37 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-jwt</artifactId>
             <version>1.0.10.RELEASE</version>
-        </dependency>
-        <dependency>
+        </dependency>-->
+        <!--<dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
-            <version>LATEST</version>
-        </dependency>
+            <version>2.3.5.RELEASE</version>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+            <version>2.1.2.RELEASE</version>
         </dependency>
 
         <!--<dependency>
@@ -182,12 +159,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>2.0.0-rc2</version>
-        </dependency>
-
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-spring-web</artifactId>
             <version>${springfox-swagger2.version}</version>
@@ -248,11 +219,40 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+    <issueManagement>
+        <url>https://github.com/MarLeo/Adhesion</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/MarLeo/Adhesion</url>
+        <connection>scm:git:git://github.com/MarLeo/Adhesion.git</connection>
+        <developerConnection>scm:git:git@github.com:MarLeo/Adhesion.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>martin.aurele12@gmail.com</email>
+            <name>Martin</name>
+            <url>https://github.com/MarLeo</url>
+            <id>MarLeo</id>
+        </developer>
+    </developers>
 
 </project>
