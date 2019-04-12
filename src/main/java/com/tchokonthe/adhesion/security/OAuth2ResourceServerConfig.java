@@ -42,7 +42,7 @@ public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
 
     @Override
     public void configure(final ResourceServerSecurityConfigurer resources) {
-        resources.tokenStore(tokenStore);
+        resources.resourceId("adhesion-api").tokenStore(tokenStore);
     }
 
     /*@Override

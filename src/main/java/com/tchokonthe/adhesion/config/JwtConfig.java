@@ -1,12 +1,11 @@
 package com.tchokonthe.adhesion.config;
 
 
-import com.tchokonthe.adhesion.security.DefaultPasswordEncoderFactories;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -29,7 +28,7 @@ public class JwtConfig {
     public JwtConfig() {
         Yaml yaml = new Yaml();
 
-        try(InputStream in = Files.newInputStream(Paths.get("src/main/conf/jwt.yml"))) {
+        try (InputStream in = Files.newInputStream(Paths.get("src/main/conf/jwt.yml"))) {
             jwtProperties = yaml.loadAs(in, JwtProperties.class);
             System.out.println("Properties: " + jwtProperties);
         } catch (IOException e) {
@@ -57,7 +56,7 @@ public class JwtConfig {
     }
 
     @Bean
-//    @Primary
+    @Primary
     public DefaultTokenServices tokenServices() {
         DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
         defaultTokenServices.setTokenStore(tokenStore());
@@ -67,6 +66,6 @@ public class JwtConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-            return /*DefaultPasswordEncoderFactories.createDelegatingPasswordEncoder()*/NoOpPasswordEncoder.getInstance();
-        }
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
 }

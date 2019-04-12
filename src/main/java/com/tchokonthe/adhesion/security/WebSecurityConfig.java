@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    /*@Override
+    @Override
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
@@ -67,9 +67,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/configuration/**",
                         "/swagger-ui.html",
                         "/oauth/**",
-                        "/webjars/**");
-//        web.ignoring().antMatchers( HttpMethod.OPTIONS, "/**" );
-    }*/
+                        "/webjars/**",
+                        "/h2-console/**");
+    }
 
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
@@ -110,17 +110,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .and().anonymous().disable();*/
 //    }
 
-    /*@Bean
-    public FilterRegistrationBean corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        source.registerCorsConfiguration("/**", config);
-        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        bean.setOrder(0);
-        return bean;
-    }*/
 }

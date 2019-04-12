@@ -12,7 +12,7 @@ import java.util.Collection;
 
 
 @Entity
-@Table(name = "USERS", schema = "testdb", uniqueConstraints = {@UniqueConstraint(columnNames = {"USER_NAME"})})
+@Table(name = "USERS"/*, schema = "testdb"*/, uniqueConstraints = {@UniqueConstraint(columnNames = {"USER_NAME"})})
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")

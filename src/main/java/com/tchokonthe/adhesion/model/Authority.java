@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "AUTHORITY", schema = "testdb", uniqueConstraints = {@UniqueConstraint(columnNames = {"NAME"})})
+@Table(name = "AUTHORITY"/*, schema = "testdb"*/, uniqueConstraints = {@UniqueConstraint(columnNames = {"NAME"})})
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
